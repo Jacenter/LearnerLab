@@ -20,7 +20,7 @@ public class TestZipCodeWilmington {
         HashMap<Student, Double> map = myCohort.getStudyMap();
 
         for (Student student : map.keySet()) {
-            Assert.assertEquals(10, student.getTotalStudyTime(), .01);
+            Assert.assertEquals(10, student.getTotalStudyTime(), 0);
         }
 
     }
@@ -33,8 +33,8 @@ public class TestZipCodeWilmington {
             HashMap<Student, Double> map = myCohort.getStudyMap();
 
             for (Student student : map.keySet()) {
-                Assert.assertEquals(10, student.getTotalStudyTime(), .01);
+                Assert.assertEquals(10, student.getTotalStudyTime(), 0);
             }
-            Assert.assertEquals(70, Educator.MIKAILA.getTimeWorked(), .01);
+            Assert.assertEquals(70, Educator.MIKAILA.getTimeWorked(), 0);
         }
     }

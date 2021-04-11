@@ -2,43 +2,48 @@ package tests;
 
 import learnerlab.*;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestInstructor {
 
+    private Instructor instructor;
+    private Student student;
+    private Learner[] learners;
+
+    @Before
+    public void setUp() {
+        instructor = Instructors.getInstanceOfInstructors().findById(125698);
+        student = Students.getINSTANCE().findById(867530);
+        learners = new Learner[]{Students.getINSTANCE().findById(867530), Students.getINSTANCE().findById(212567), Students.getINSTANCE().findById(193812)};
+    }
+
     @Test
     public void testImplementation() {
-        Instructor instructor = new Instructor("Phil",12345);
-        Assert.assertFalse(instructor instanceof Learner);
+        Assert.assertTrue(instructor instanceof Teacher);
     }
 
     @Test
     public void testInheritance() {
-        Instructor instructor = new Instructor("Phil",12345);
         Assert.assertTrue(instructor instanceof Person);
     }
 
     @Test
     public void testLearn() {
         //given
-        Instructor instructor = new Instructor("Jim Jones", 12345);
-        Student student = new Student("Killian", 12345);
         //when
-        instructor.teach(student, 20.0);
-        double expectedTimeLearned = 20.0;
+        instructor.teach(student, 4.0);
         //then
-        Assert.assertEquals(20.0, expectedTimeLearned, 0);
+        Assert.assertEquals(4.0, student.getTotalStudyTime(), 0);
     }
 
     @Test
     public void testLecture() {
         //given
-        Instructor instructor = new Instructor("Jim Jones", 12345);
-        Learner[] learners = {new Student("Joe", 12345), new Student("Josh", 124345), new Student("Lisa", 12345)};
         //when
-        instructor.lecture(learners, 60.0);
-        double expectedTimePerStudent = 60.0/learners.length;
+        instructor.lecture(learners, 9.0);
+        double expectedTimePerStudent = 9.0/learners.length;
         //then
-        Assert.assertEquals(20.0, expectedTimePerStudent,0);
+        Assert.assertEquals(3.0, expectedTimePerStudent,0);
     }
 }

@@ -3,23 +3,28 @@ package tests;
 import learnerlab.Learner;
 import learnerlab.Person;
 import learnerlab.Student;
+import learnerlab.Students;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestStudent {
 
+    private Student student;
+
+    @Before
+    public void setUp(){
+        student = Students.getINSTANCE().findById(867530);
+    }
+
     @Test
     public void testImplementation() {
-        //given
-        Student student = new Student("Mike", 1234567);
         //then
         Assert.assertTrue(student instanceof Learner);
     }
 
     @Test
     public void testInheritance() {
-        //given
-        Student student = new Student("John",1234567);
         //then
         Assert.assertTrue(student instanceof Person);
     }
@@ -29,10 +34,9 @@ public class TestStudent {
         //given
         Student student = new Student("Phil", 1234567);
         //when
-        student.learn(20.0);
-        double expectedLearnedTime = student.getTotalStudyTime();
+        student.learn(5.0);
         //then
-        Assert.assertEquals(20.0 ,expectedLearnedTime,0);
+        Assert.assertEquals(5.0 ,student.getTotalStudyTime(),0);
 
     }
 }

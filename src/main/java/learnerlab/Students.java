@@ -12,12 +12,10 @@ public final class Students extends People<Student> {
             Student student = new Student("Dawar", 867530);
             Student student1 = new Student("Juliana", 212567);
             Student student2 = new Student("Mike", 193812);
-            Student student3 = new Student("Jared", 989521);
 
             eList.add(student);
             eList.add(student1);
             eList.add(student2);
-            eList.add(student3);
         }
         }
         //this private nullary constructor prevents this class from being instantiated

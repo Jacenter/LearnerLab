@@ -14,7 +14,7 @@ public class Instructor extends Person implements Teacher{
     @Override
     public void lecture(Learner[] learners, double numberOfHours) {
         double hoursPerLearner = numberOfHours/ learners.length;
-        for (Learner each : learners) {
+        for (Learner each : Students.getINSTANCE()) {
             each.learn(hoursPerLearner);
         }
     }

@@ -1,6 +1,7 @@
 package tests;
 
 import learnerlab.Person;
+import learnerlab.Students;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,8 +10,8 @@ public class TestPerson {
     @Test
     public void testConstructor() {
         //given
-        String expectedName = "Joe";
-        Long expectedId = Long.valueOf(1234567);
+        String expectedName = Students.getINSTANCE().findById(212567).getName();
+        Long expectedId = Students.getINSTANCE().findById(212567).getId();
         Person person = new Person(expectedName, expectedId);
         //when
         String actualName = person.getName();

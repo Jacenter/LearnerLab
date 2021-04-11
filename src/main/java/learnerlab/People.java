@@ -3,10 +3,9 @@ package learnerlab;
 import java.util.*;
 
 public abstract class People <E extends Person> implements Iterable<E> {
-    //E == Person object
 
-    //People class should instantiate a List field of Person objects named personList
-    List<E> eList = new ArrayList<E>();
+
+    List<E> eList = new ArrayList<>();
 
     public void add(E eObject) {
         eList.add(eObject);

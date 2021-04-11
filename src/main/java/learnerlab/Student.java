@@ -8,13 +8,9 @@ public class Student extends Person implements Learner {
         super(name, id);
     }
 
-    public void setTotalStudyTime(double totalStudyTime) {
-        this.totalStudyTime = totalStudyTime;
-    }
-
     @Override
     public void learn(double numberOfHours) {
-        this.totalStudyTime = totalStudyTime + numberOfHours;
+        totalStudyTime += numberOfHours;
 
     }
 

@@ -12,7 +12,7 @@ public class TestPeople {
     private Student student;
 
     @Before
-    public void setVariables() throws Exception{
+    public void setUp(){
        this.students = Students.getINSTANCE();
        this.student = new Student("Joe", 123456);
        

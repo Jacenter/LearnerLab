@@ -39,8 +39,8 @@ public final class ZipCodeWilmington {
 
     public HashMap getStudyMap(){
         HashMap <Student, Double> studyMap = new HashMap<>();
-        for (Person x : students.toArray()) {
-            studyMap.put((Student) x,((Student) x).getTotalStudyTime());
+        for (Student x : Students.getINSTANCE()) {
+            studyMap.put(x, x.getTotalStudyTime());
         }
         return studyMap;
     }
